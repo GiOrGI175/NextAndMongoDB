@@ -1,4 +1,4 @@
-const checkExistUser = async (req, res) => {
+const checkExistUser = async (req, res, next) => {
   const { email } = req.body;
 
   if (!email) {
@@ -9,6 +9,7 @@ const checkExistUser = async (req, res) => {
   if (existUser) {
     return res.status(400).json({ message: 'user already exists' });
   }
+  next();
 };
 
 module.exports = checkExistUser;

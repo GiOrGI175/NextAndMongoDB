@@ -4,11 +4,11 @@ const expenseSchema = new mongoose.Schema({
   category: {
     type: String,
   },
-  price: {
-    type: Number,
-  },
   name: {
     type: String,
+  },
+  price: {
+    type: Number,
   },
 });
 

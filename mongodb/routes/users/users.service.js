@@ -11,6 +11,7 @@ const createUser = async (req, res) => {
 };
 
 const getUserById = async (req, res) => {
+  const { id } = req.params;
   const user = await userModel.findById(id);
 
   if (!user) {
@@ -20,11 +21,14 @@ const getUserById = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
+  const { id } = req.params;
+
   const deletedUser = await userModel.findByIdAndDelete(id);
   res.json(deletedUser);
 };
 
 const updateUserById = async (req, res) => {
+  const { id } = req.params;
   const updatedUser = await userModel.findByIdAndUpdate(id, req.body, {
     new: true,
   });

@@ -10,8 +10,8 @@ const {
   updateUserById,
 } = require('./users.service');
 
-const checkExistUser = require('../../middlewares/users_middlewares/checkExistUser');
-const checkValidObjectId = require('../../middlewares/users_middlewares/checkValidObjectId');
+const checkExistUser = require('../../middlewares/checkExistUser');
+const checkValidObjectId = require('../../middlewares/checkValidObjectId');
 
 userRouter.get('/', getAllUsers);
 userRouter.post('/', checkExistUser, createUser);
